@@ -24,8 +24,10 @@ public abstract class Figure {
         return this.y;
     }
 
-    public abstract int getSizeX();
+    public abstract int getSizeX1();
+    public abstract int getSizeX2();
 
-    public abstract int getSizeY();
+    public abstract int getSizeY1();
+    public abstract int getSizeY2();
 
 }

@@ -30,18 +30,22 @@ public class Circle extends Figure {
     }
 
     @Override
-    public int getSizeX() {
-        int tmpX1 = this.x + radius;
-        int tmpX2 = this.x - radius;
-        return tmpX1;
-
+    public int getSizeX1() {
+        return this.x + radius;
+    }
+    @Override
+    public int getSizeX2() {
+        return this.x - radius;
     }
 
     @Override
-    public int getSizeY() {
-        int tmpY1 = this.y + radius;
-        int tmpY2 = this.y - radius;
-        return tmpY1;
+    public int getSizeY1() {
+        return this.y + radius;
     }
+    @Override
+    public int getSizeY2() {
+        return this.y - radius;
+    }
+
 }
 

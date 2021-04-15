@@ -27,12 +27,22 @@ public class Rectangle extends Figure {
         return getName() + " с точкой позиционирования [" + this.x + ";" + this.y + "], длинами сторон [" + this.a + ";" + this.b + "] имеет площадь - [" + getAreaSquare() + "]";
     }
     @Override
-    public int getSizeX() {
+    public int getSizeX1() {
         return this.x + a;
     }
 
     @Override
-    public int getSizeY() {
+    public int getSizeX2() {
+        return 0;
+    }
+
+    @Override
+    public int getSizeY1() {
         return this.y + b;
+    }
+
+    @Override
+    public int getSizeY2() {
+        return 0;
     }
 }

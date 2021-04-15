@@ -26,14 +26,22 @@ public class Square extends Figure {
     }
 
     @Override
-    public int getSizeX() {
-        int tmpX = this.x + a;
-        return tmpX;
+    public int getSizeX1() {
+        return this.x + a;
     }
 
     @Override
-    public int getSizeY() {
-        int tmpY = this.y + a;
-        return tmpY;
+    public int getSizeX2() {
+        return 0;
+    }
+
+    @Override
+    public int getSizeY1() {
+        return this.y + a;
+    }
+
+    @Override
+    public int getSizeY2() {
+        return 0;
     }
 }

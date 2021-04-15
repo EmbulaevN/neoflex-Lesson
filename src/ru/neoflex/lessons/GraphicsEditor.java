@@ -22,7 +22,7 @@ public class GraphicsEditor {
     }
 
     private boolean checkAdding(Figure figure) {
-        return checkPoint(figure.getX(), figure.getY()) && checkFigureSizeX(figure);
+        return checkPoint(figure.getX(), figure.getY()) && checkFigureSizeRB(figure) && checkFigureSizeTL(figure);
     }
 
 
@@ -30,12 +30,12 @@ public class GraphicsEditor {
         return (x <= canvas.length) && (y <= canvas[0].length);
     }
 
-    private boolean checkFigureSizeX(Figure figure) {
-        return ((figure.getSizeX() <= canvas.length) && (figure.getSizeY() <= canvas[0].length));
+    private boolean checkFigureSizeRB(Figure figure) {
+        return ((figure.getSizeX1() <= canvas.length) && (figure.getSizeY1() <= canvas[0].length));
     }
 
-    private boolean checkFigureSizeY(Figure figure) {
-        return ((figure.getSizeX() <= canvas.length) && (figure.getSizeY() <= canvas[0].length));
+    private boolean checkFigureSizeTL(Figure figure) {
+        return ((figure.getSizeX2() >= 0) && (figure.getSizeY2() >= 0));
     }
 
 }

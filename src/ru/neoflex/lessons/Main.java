@@ -23,7 +23,7 @@ public class Main {
     public static void main(String args[]) {
         GraphicsEditor graphicsEditor = new GraphicsEditor(100, 100);
 
-        Method m1 = shapes.get("Круг");
+        /*Method m1 = shapes.get("Круг");
         Shape shape1 = m1.getAnnotation(Shape.class);
         String name1 = shape1.name();
         int x = shape1.pointX();
@@ -48,26 +48,26 @@ public class Main {
         int y3 = shape3.pointY();
         int[] a3 = shape3.parametersShape();
         System.out.println(name3);
-        System.out.println(x3 + " " + y3 + " " + a3[0] + " " + a3[1]);
+        System.out.println(x3 + " " + y3 + " " + a3[0] + " " + a3[1]);*/
 
 
 
 
         // Пытаемся добавить их на холст
         try {
-            graphicsEditor.addFigureToCanvas((Figure) shape1);
+            graphicsEditor.addFigureToCanvas(new Circle(5,5,1));
+        } catch (GraphicEditorException e) {
+            e.printStackTrace();
+        }
+
+       try {
+            graphicsEditor.addFigureToCanvas(new Square(5,5,1));
         } catch (GraphicEditorException e) {
             e.printStackTrace();
         }
 
         try {
-            graphicsEditor.addFigureToCanvas((Figure) shape2);
-        } catch (GraphicEditorException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            graphicsEditor.addFigureToCanvas((Figure) shape3);
+            graphicsEditor.addFigureToCanvas(new Rectangle(5,5,1,5));
         } catch (GraphicEditorException e) {
             e.printStackTrace();
         }
