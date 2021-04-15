@@ -5,7 +5,6 @@ class User {
             pointX = 5,
             pointY = 5,
             parametersShape = 100)
-
     public static void getFigureCircle() {
 
     }
@@ -14,7 +13,6 @@ class User {
             pointX = 5,
             pointY = 5,
             parametersShape = {10, 10})
-
     public static void getFigureRectangle() {
 
     }
@@ -23,7 +21,6 @@ class User {
             pointX = 5,
             pointY = 5,
             parametersShape = 15)
-
     public static void getFigureSquare() {
     }
 

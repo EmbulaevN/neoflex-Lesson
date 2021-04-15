@@ -11,9 +11,9 @@ import java.lang.annotation.Target;
 @Target(ElementType.METHOD) //Указывает, что целью нашей Аннотации является метод (не класс, не переменная, не поле, а именно метод).
 
 
-public @interface Shape //Описание. Заметим, что перед interface стоит @;
+public @interface Shape
 {
-    String name(); //Команда за которую будет отвечать функция (например "привет");
+    String name(); //имя фигуры
 
     int pointX(); //точка привязки по Х
 
