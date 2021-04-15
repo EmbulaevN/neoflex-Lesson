@@ -23,14 +23,14 @@ public class Main {
     public static void main(String args[]) {
         GraphicsEditor graphicsEditor = new GraphicsEditor(100, 100);
 
-        /*Method m1 = shapes.get("Круг");
+        Method m1 = shapes.get("Круг");
         Shape shape1 = m1.getAnnotation(Shape.class);
         String name1 = shape1.name();
-        int x = shape1.pointX();
-        int y = shape1.pointY();
+        int x1 = shape1.pointX();
+        int y1 = shape1.pointY();
         int[] radius = shape1.parametersShape();
-        System.out.println(name1);
-        System.out.println(x + " " + y + " " + radius[0]);
+        double s1 = Math.pow(radius[0], 2) * Math.PI;
+
 
         Method m2 = shapes.get("Квадрат");
         Shape shape2 = m2.getAnnotation(Shape.class);
@@ -38,8 +38,8 @@ public class Main {
         int x2 = shape2.pointX();
         int y2 = shape2.pointY();
         int[] a2 = shape2.parametersShape();
-        System.out.println(name2);
-        System.out.println(x2 + " " + y2 + " " + a2[0]);
+        double s2 = Math.pow(a2[0], 2);
+
 
         Method m3 = shapes.get("Прямоугольник");
         Shape shape3 = m3.getAnnotation(Shape.class);
@@ -47,27 +47,24 @@ public class Main {
         int x3 = shape3.pointX();
         int y3 = shape3.pointY();
         int[] a3 = shape3.parametersShape();
-        System.out.println(name3);
-        System.out.println(x3 + " " + y3 + " " + a3[0] + " " + a3[1]);*/
-
-
+        double s3 = a3[0] * a3[1];
 
 
         // Пытаемся добавить их на холст
         try {
-            graphicsEditor.addFigureToCanvas(new Circle(5,5,1));
+            graphicsEditor.addFigureToCanvas(shape1, s1);
         } catch (GraphicEditorException e) {
             e.printStackTrace();
         }
 
        try {
-            graphicsEditor.addFigureToCanvas(new Square(5,5,1));
+            graphicsEditor.addFigureToCanvas(shape2, s2);
         } catch (GraphicEditorException e) {
             e.printStackTrace();
         }
 
         try {
-            graphicsEditor.addFigureToCanvas(new Rectangle(5,5,1,5));
+            graphicsEditor.addFigureToCanvas(shape3, s3);
         } catch (GraphicEditorException e) {
             e.printStackTrace();
         }

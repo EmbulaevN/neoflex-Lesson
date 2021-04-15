@@ -11,18 +11,40 @@ public class GraphicsEditor {
         this.canvas = new boolean[x][y];
     }
 
-    public void addFigureToCanvas(Figure figure) throws GraphicEditorException {
+    public void addFigureToCanvas(Shape figure, double s) throws GraphicEditorException {
 
         if (checkAdding(figure)) {
-            System.out.println(figure.getInfo());
+            StringBuilder str = new StringBuilder()
+                   .append("Фигура добавлена на холст: ")
+                   .append(figure.name())
+                   .append(" с центром в точке [")
+                   .append(figure.pointX())
+                   .append(";")
+                   .append(figure.pointY());
+            if ("Круг".equals(figure.name())) {
+                str.append("], радиусом [");
+            } else if  ("Квадрат".equals(figure.name())){
+                str.append("], стороной [");
+            }  else {
+                str.append("], со сторонами [");
+                str.append(figure.parametersShape()[1])
+
+
+
+            }
+
+                   str.append(figure.parametersShape()[0])
+                   .append("] имеет площадь - [")
+                   .append(s)
+                   .append("]"));
         } else {
-            throw new GraphicEditorException("Невозможно добавить фигуру " + figure.getName() + " на холст. Проверьте размеры фигуры и ее расположение на холсте.");
+            throw new GraphicEditorException("Невозможно добавить фигуру " + figure.name() + " на холст. Проверьте размеры фигуры и ее расположение на холсте.");
 
         }
     }
 
-    private boolean checkAdding(Figure figure) {
-        return checkPoint(figure.getX(), figure.getY()) && checkFigureSizeRB(figure) && checkFigureSizeTL(figure);
+    private boolean checkAdding(Shape figure) {
+        return checkPoint(figure.pointX(), figure.pointY()) && checkFigureSizeRB(figure) && checkFigureSizeTL(figure);
     }
 
 
@@ -30,12 +52,15 @@ public class GraphicsEditor {
         return (x <= canvas.length) && (y <= canvas[0].length);
     }
 
-    private boolean checkFigureSizeRB(Figure figure) {
-        return ((figure.getSizeX1() <= canvas.length) && (figure.getSizeY1() <= canvas[0].length));
+    private boolean checkFigureSizeRB(Shape figure) {
+        return ((figure.pointX() + figure.parametersShape()[0] <= canvas.length) && ((figure.pointY() + figure.parametersShape()[0]) <= canvas[0].length));
     }
 
-    private boolean checkFigureSizeTL(Figure figure) {
-        return ((figure.getSizeX2() >= 0) && (figure.getSizeY2() >= 0));
+    private boolean checkFigureSizeTL(Shape figure) {
+        if ("Круг".equals(figure.name())){
+            return ((figure.pointX() - figure.parametersShape()[0] >= 0) && ((figure.pointY() - figure.parametersShape()[0]) >= 0));
+        }
+        return true;
     }
 
 }

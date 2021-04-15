@@ -2,11 +2,10 @@ package ru.neoflex.lessons;
 
 class User {
     @Shape(name = "Круг",
-            pointX = 5,
-            pointY = 5,
-            parametersShape = 100)
+            pointX = 50,
+            pointY = 50,
+            parametersShape = 10)
     public static void getFigureCircle() {
-
     }
 
     @Shape(name = "Прямоугольник",
@@ -14,7 +13,6 @@ class User {
             pointY = 5,
             parametersShape = {10, 10})
     public static void getFigureRectangle() {
-
     }
 
     @Shape(name = "Квадрат",
